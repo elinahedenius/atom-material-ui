@@ -1,6 +1,7 @@
 @import "syntax-variables";
 @import "md-colors";
 @import "fonts/roboto";
+@import "fonts/ProductSans";
 
 // Colors
 @text-color: fade(@syntax-text-color, 65%);
@@ -8,10 +9,10 @@
 @text-color-highlight: @syntax-text-color;
 @text-color-selected: @accent-text-color;
 
-@text-color-info: @md-blue-300;
-@text-color-success: @md-light-green-500;
-@text-color-warning: @md-amber-400;
-@text-color-error: @md-red-400;
+@text-color-info: @blue;
+@text-color-success: @green;
+@text-color-warning: @yellow;
+@text-color-error: @red;
 
 @text-color-ignored: @text-color-subtle;
 @text-color-added: @text-color-success;
@@ -27,8 +28,8 @@
 @background-color-selected: @base-color;
 
 @app-background-color: @syntax-background-color;
-
-@base-background-color: @app-background-color;
+@darker-background-color: darken(@base-background-color, 3%);
+@base-background-color: @syntax-background-color;
 @base-border-color: transparent;
 
 @pane-item-background-color: @base-background-color;
@@ -37,16 +38,16 @@
 @input-background-color: @app-background-color;
 @input-border-color: @base-border-color;
 
-@tool-panel-background-color: @base-background-color;
+@tool-panel-background-color: @darker-background-color;
 @tool-panel-border-color: @base-border-color;
 
-@inset-panel-background-color: @base-background-color;
+@inset-panel-background-color: @darker-background-color;
 @inset-panel-border-color: @base-border-color;
 
-@panel-heading-background-color: @base-background-color;
+@panel-heading-background-color: @darker-background-color;
 @panel-heading-border-color: fadein(@base-border-color, 10%);
 
-@overlay-background-color: @base-background-color;
+@overlay-background-color: @darker-background-color;
 @overlay-border-color: @base-border-color;
 
 @button-background-color: @base-background-color;
@@ -54,51 +55,50 @@
 @button-background-color-selected: @base-background-color;
 @button-border-color: @base-border-color;
 
-@tab-bar-background-color: @base-background-color;
+@tab-bar-background-color: @darker-background-color;
 @tab-bar-border-color: darken(@tab-background-color-active, 10%);
-@tab-background-color: @base-background-color;
-@tab-background-color-active: @base-background-color;
+@tab-background-color: @darker-background-color;
+@tab-background-color-active: @darker-background-color;
 @tab-border-color: @base-border-color;
 
-@tree-view-background-color: @base-background-color;
+@tree-view-background-color: @darker-background-color;
 @tree-view-border-color: @tool-panel-border-color;
 
 @scrollbar-background-color: @base-background-color; // Needs to be opaque -> atom/atom/issues/4578
-@scrollbar-color: fade(@base-color, 80%);
+@scrollbar-color: @accent-color;
 
 @ui-site-color-1: @background-color-success; // green
 @ui-site-color-2: @background-color-info; // blue
 @ui-site-color-3: @background-color-warning; // orange
-@ui-site-color-4: @md-deep-purple-400; // purple
-@ui-site-color-5: @md-yellow-300; // yellow
+@ui-site-color-4: @pink; // purple
+@ui-site-color-5: @yellow; // yellow
 
 
 // Sizes
 
-@font-size: 12px;
-@input-font-size: 12px;
+@font-size: 14px;
+@input-font-size: 16px;
 
 @disclosure-arrow-size: 12px;
 
 @component-padding: 10px;
-@component-icon-padding: 16px;
+@component-icon-padding: 5px;
 @component-icon-size: 16px;
-@component-line-height: 28px;
-@component-border-radius: .125rem;
+@component-line-height: 30px;
+@component-border-radius: 3px;
 
 @tab-height: 3rem;
 @compact-tab-height: 2.5rem;
 
 
 // Other
-
-@font-family: 'Roboto', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
+@font-family: 'Roboto', 'Product Sans', 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, sans-serif;
 @md-timing-function: cubic-bezier(.4, 0, .2, 1);
 
 // Main color variables – default values
-@accent-color: #FFFFFF;
-@accent-text-color: rgba(255,255,255,0.8);
-@base-color: #009688;
+@accent-color: lighten(@base-background-color, 10%);
+@accent-text-color: @darker-background-color;
+@base-color: @cyan;
 
 // Override main color variables with user's settings
 @import (optional) "user-settings";
